@@ -1,0 +1,30 @@
+{
+  "name": "Facet",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "type"
+    },
+    "identifier": {
+      "type": "string",
+      "description": "identifier"
+    },
+    "displayValue": {
+      "type": "string",
+      "description": "displayValue"
+    },
+    "count": {
+      "type": "number",
+      "description": "count"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

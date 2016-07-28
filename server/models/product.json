@@ -1,0 +1,87 @@
+{
+  "name": "Product",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Product Id.",
+      "id":true
+    },
+    "title": {
+      "type": "string",
+      "description": "Product title."
+    },
+    "shortDescription": {
+      "type": "string",
+      "description": "short description."
+    },
+    "longDescription": {
+      "type": "string",
+      "description": "long Description."
+    },
+    "keywords": {
+      "type": "string",
+      "description": "Keywords."
+    },
+    "media": {
+      "type": [
+        "Media"
+      ],
+      "description": "Media."
+    },
+    "manufacturer": {
+      "type": "string",
+      "description": "Manufacturer"
+    },
+    "numberOfChildSKUs": {
+      "type": "number",
+      "description": "number of child SKU's"
+    },
+    "categoryId": {
+      "type": "string",
+      "description": "Category Id"
+    },
+    "parentProductId": {
+      "type": "string",
+      "description": "Parent Product Id"
+    },
+    "productType": {
+      "type": "string",
+      "description": "Product Type"
+    },
+    "attributes": {
+      "type": [
+        "Attribute"
+      ],
+      "description": "Attributes"
+    },
+    "prices": {
+      "type": [
+        "Price"
+      ],
+      "description": "Items"
+    },
+    "inventory": {
+      "type": [
+        "Inventory"
+      ],
+      "description": "inventory"
+    },
+    "baseCategory": {
+      "type": "object",
+      "description": "nested list of parent categories"
+    },
+    "recommendations": {
+      "type": "string",
+      "description": "recommendations"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Price",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "currency": {
+      "type": "string",
+      "description": "currency"
+    },
+    "formattedValue": {
+      "type": "string",
+      "description": "formattedValue"
+    },
+    "type": {
+      "type": "string",
+      "description": "type"
+    },
+    "value": {
+      "type": "number",
+      "description": "value"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

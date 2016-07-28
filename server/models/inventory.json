@@ -1,0 +1,22 @@
+{
+  "name": "Inventory",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "availableQty": {
+      "type": "number",
+      "description": "availableQty"
+    },
+    "cartAction": {
+      "type": "string",
+      "description": "cartAction"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

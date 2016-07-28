@@ -1,0 +1,48 @@
+{
+  "name": "Category",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Id"
+    },
+    "name": {
+      "type": "string",
+      "description": "name"
+    },
+    "shortDescription": {
+      "type": "string",
+      "description": "shortDescription"
+    },
+    "longDescription": {
+      "type": "string",
+      "description": "longDescription"
+    },
+    "keywords": {
+      "type": "string",
+      "description": "keywords"
+    },
+    "baseCategory": {
+      "type": "object",
+      "description": "nested list of parent categories"
+    },
+    "media": {
+      "type": [
+        "Media"
+      ],
+      "description": "media"
+    },
+    "childCategories": {
+      "type": "object",
+      "description": "childCategories"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

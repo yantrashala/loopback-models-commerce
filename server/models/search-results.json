@@ -1,0 +1,37 @@
+{
+  "name": "SearchResults",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "products": {
+      "type": [
+        "Product"
+      ],
+      "description": "Products"
+    },
+    "count": {
+      "type": "number",
+      "description": "count"
+    },
+    "keyword": {
+      "type": "string",
+      "description": "keyword"
+    },
+    "description": {
+      "type": "string",
+      "description": "description"
+    },
+    "facets": {
+      "type": [
+        "Facet"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

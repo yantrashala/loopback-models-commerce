@@ -1,0 +1,994 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Commerce Yaml",
+        "description": "```\n  Current Status Draft Version\n```\nCanonical Model Specification for Commerce Componenents and its related operations.<br><br>\n\n**Revison History**\n* 0.0.1, Draft Version [@Abhijeet](mailto:aseal@sapient.com), `21-July-2016\n\n* \n* None\n<br><br>\n",
+        "version": "0.0.1"
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    },
+    "paths": {
+        "/products/{id}": {
+            "get": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "tags": [
+                    "product"
+                ],
+                "description": "Retrieves information about Product.",
+                "operationId": "Product.findByProductId",
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Product Id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                }
+            }
+        },
+        "/products/bySearchTerm/{searchTerm}": {
+            "get": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "tags": [
+                    "product"
+                ],
+                "description": "Retrieves information about Product.",
+                "operationId": "Product.findByTerm",
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "searchTerm",
+                        "in": "path",
+                        "description": "Search Term",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                }
+            }
+        },
+        "/products/byCategoryId/{categoryId}": {
+            "get": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "tags": [
+                    "product"
+                ],
+                "description": "Retrieves information about Product.",
+                "operationId": "Product.findByCategoryId",
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "categoryId",
+                        "in": "path",
+                        "description": "Category Id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                }
+            }
+        },
+        "/categories/{id}": {
+            "get": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "tags": [
+                    "category"
+                ],
+                "description": "Retrieves information about Product.",
+                "operationId": "Category.tree",
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Category Id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Category"
+                        }
+                    }
+                }
+            }
+        },
+        "/product/search": {
+            "post": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "tags": [
+                    "SearchResults"
+                ],
+                "description": "Searches information about Product.",
+                "operationId": "SearchResults.findProducts",
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "categoryId",
+                        "in": "query",
+                        "description": "Category ID",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "searchTerm",
+                        "in": "query",
+                        "description": "search Term",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "facets",
+                        "in": "body",
+                        "description": "Facet name and value",
+                        "schema": {
+                            "$ref": "#/definitions/Facet"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/SearchResults"
+                        }
+                    }
+                }
+            }
+        },
+        "/cart": {
+            "post": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "tags": [
+                    "Cart"
+                ],
+                "description": "Create Cart.",
+                "operationId": "Cart.createCart",
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "login",
+                        "in": "header",
+                        "description": "Email",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Cart"
+                        }
+                    }
+                }
+            }
+        },
+        "/cart/addToCart": {
+            "put": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "tags": [
+                    "Cart"
+                ],
+                "description": "Add to Cart.",
+                "operationId": "Cart.addToCart",
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "description": "Cart Code",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "entries",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/OrderEntry"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Cart"
+                        }
+                    }
+                }
+            }
+        },
+        "/cart/paymentDetails": {
+            "put": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "tags": [
+                    "Cart"
+                ],
+                "description": "Update cart with Payment Details.",
+                "operationId": "Cart.addPaymentDetails",
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "description": "Cart Code",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "paymentDetails",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/PaymentDetails"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Cart"
+                        }
+                    }
+                }
+            }
+        },
+        "/cart/shippingAddress": {
+            "put": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "tags": [
+                    "Cart"
+                ],
+                "description": "Add Shipping Address.",
+                "operationId": "Cart.addShippingAddress",
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "description": "Cart Code",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "deliveryAddress",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Address"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Cart"
+                        }
+                    }
+                }
+            }
+        },
+        "/order/placeOrder": {
+            "post": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "tags": [
+                    "Order"
+                ],
+                "description": "Place Order.",
+                "operationId": "Order.placeOrder",
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "cartId",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "Cart Id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/Order"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Category": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "name"
+                },
+                "shortDescription": {
+                    "type": "string",
+                    "description": "shortDescription"
+                },
+                "longDescription": {
+                    "type": "string",
+                    "description": "longDescription"
+                },
+                "keywords": {
+                    "type": "string",
+                    "description": "keywords"
+                },
+                "baseCategory": {
+                    "type": "object",
+                    "items": {
+                        "$ref": "#/definitions/BaseCategory"
+                    },
+                    "description": "nested list of parent categories"
+                },
+                "media": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Media"
+                    },
+                    "description": "media"
+                },
+                "childCategories": {
+                    "type": "object",
+                    "description": "childCategories"
+                }
+            }
+        },
+        "BaseCategory": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "name"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type",
+                    "enum": [
+                        "product",
+                        "category"
+                    ]
+                },
+                "baseCategory": {
+                    "$ref": "#/definitions/BaseCategory"
+                }
+            }
+        },
+        "Product": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Product Id."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "Product title."
+                },
+                "shortDescription": {
+                    "type": "string",
+                    "description": "short description."
+                },
+                "longDescription": {
+                    "type": "string",
+                    "description": "long Description."
+                },
+                "keywords": {
+                    "type": "string",
+                    "description": "Keywords."
+                },
+                "media": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Media"
+                    },
+                    "description": "Media."
+                },
+                "manufacturer": {
+                    "type": "string",
+                    "description": "Manufacturer"
+                },
+                "numberOfChildSKUs": {
+                    "type": "number",
+                    "description": "number of child SKU's"
+                },
+                "categoryId": {
+                    "type": "string",
+                    "description": "Category Id"
+                },
+                "parentProductId": {
+                    "type": "string",
+                    "description": "Parent Product Id"
+                },
+                "productType": {
+                    "type": "string",
+                    "description": "Product Type"
+                },
+                "attributes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Attribute"
+                    },
+                    "description": "Attributes"
+                },
+                "prices": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Price"
+                    },
+                    "description": "Items"
+                },
+                "inventory": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Inventory"
+                    },
+                    "description": "inventory"
+                },
+                "baseCategory": {
+                    "type": "object",
+                    "items": {
+                        "$ref": "#/definitions/BaseCategory"
+                    },
+                    "description": "nested list of parent categories"
+                },
+                "recommendations": {
+                    "type": "string",
+                    "description": "recommendations"
+                }
+            }
+        },
+        "Media": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "Type"
+                },
+                "link": {
+                    "type": "string",
+                    "description": "link"
+                },
+                "thumbnail": {
+                    "type": "string",
+                    "description": "thumbnail"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "title"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "description"
+                }
+            }
+        },
+        "Attribute": {
+            "type": "object",
+            "properties": {
+                "identifier": {
+                    "type": "string",
+                    "description": "identifier"
+                },
+                "valueIdentifier": {
+                    "type": "string",
+                    "description": "valueIdentifier"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "type"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "value"
+                }
+            }
+        },
+        "Price": {
+            "type": "object",
+            "properties": {
+                "currency": {
+                    "type": "string",
+                    "description": "currency"
+                },
+                "formattedValue": {
+                    "type": "string",
+                    "description": "formattedValue"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "type"
+                },
+                "value": {
+                    "type": "number",
+                    "description": "value"
+                }
+            }
+        },
+        "Inventory": {
+            "type": "object",
+            "properties": {
+                "availableQty": {
+                    "type": "number",
+                    "description": "availableQty"
+                },
+                "cartAction": {
+                    "type": "string",
+                    "description": "cartAction"
+                }
+            }
+        },
+        "SearchResults": {
+            "type": "object",
+            "properties": {
+                "products": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Product"
+                    },
+                    "description": "Products"
+                },
+                "count": {
+                    "type": "number",
+                    "description": "count"
+                },
+                "keyword": {
+                    "type": "string",
+                    "description": "keyword"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "description"
+                },
+                "facets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Facet"
+                    }
+                }
+            }
+        },
+        "Facet": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "type"
+                },
+                "identifier": {
+                    "type": "string",
+                    "description": "identifier"
+                },
+                "displayValue": {
+                    "type": "string",
+                    "description": "displayValue"
+                },
+                "count": {
+                    "type": "number",
+                    "description": "count"
+                }
+            }
+        },
+        "Region": {
+            "type": "object",
+            "properties": {
+                "isocode": {
+                    "type": "string",
+                    "description": "Region Code"
+                }
+            }
+        },
+        "Country": {
+            "type": "object",
+            "properties": {
+                "isocode": {
+                    "type": "string",
+                    "description": "Country Code"
+                }
+            }
+        },
+        "Address": {
+            "type": "object",
+            "properties": {
+                "titleCode": {
+                    "type": "string",
+                    "description": "TiTle",
+                    "enum": [
+                        "mr",
+                        "ms",
+                        "mrs"
+                    ]
+                },
+                "firstName": {
+                    "type": "string",
+                    "description": "First Name"
+                },
+                "lastName": {
+                    "type": "string",
+                    "description": "Last Name"
+                },
+                "userid": {
+                    "type": "string",
+                    "description": "User Id"
+                },
+                "shippingAddress": {
+                    "type": "boolean",
+                    "description": "Shipping Address"
+                },
+                "line1": {
+                    "type": "string",
+                    "description": "Line 1"
+                },
+                "line2": {
+                    "type": "string",
+                    "description": "Line 2"
+                },
+                "town": {
+                    "type": "string",
+                    "description": "Town"
+                },
+                "postalcode": {
+                    "type": "number",
+                    "description": "Postal Code"
+                },
+                "region": {
+                    "$ref": "#/definitions/Region"
+                },
+                "country": {
+                    "$ref": "#/definitions/Country"
+                }
+            }
+        },
+        "Cart": {
+            "type": "object",
+            "properties": {
+                "userId": {
+                    "type": "string",
+                    "description": "UserId"
+                },
+                "totalUnitCount": {
+                    "type": "number",
+                    "description": "Count"
+                },
+                "expirationTime": {
+                    "type": "string",
+                    "description": "Expiration Time"
+                },
+                "saveTime": {
+                    "type": "string",
+                    "description": "Save time"
+                },
+                "code": {
+                    "type": "string",
+                    "description": "Code"
+                },
+                "totalPriceWithTax": {
+                    "$ref": "#/definitions/Price"
+                },
+                "totalPrice": {
+                    "$ref": "#/definitions/Price"
+                },
+                "totalTax": {
+                    "$ref": "#/definitions/Price"
+                },
+                "subtotal": {
+                    "$ref": "#/definitions/Price"
+                },
+                "deliveryCost": {
+                    "$ref": "#/definitions/Price"
+                },
+                "entries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/OrderEntry"
+                    }
+                },
+                "deliveryAddress": {
+                    "$ref": "#/definitions/Address"
+                },
+                "paymentDetails": {
+                    "$ref": "#/definitions/PaymentDetails"
+                }
+            }
+        },
+        "Order": {
+            "type": "object",
+            "properties": {
+                "userId": {
+                    "type": "string",
+                    "description": "UserId"
+                },
+                "totalUnitCount": {
+                    "type": "number",
+                    "description": "Count"
+                },
+                "expirationTime": {
+                    "type": "string",
+                    "description": "Expiration Time"
+                },
+                "saveTime": {
+                    "type": "string",
+                    "description": "Save time"
+                },
+                "code": {
+                    "type": "string",
+                    "description": "Code"
+                },
+                "totalPriceWithTax": {
+                    "$ref": "#/definitions/Price"
+                },
+                "totalPrice": {
+                    "$ref": "#/definitions/Price"
+                },
+                "totalTax": {
+                    "$ref": "#/definitions/Price"
+                },
+                "subtotal": {
+                    "$ref": "#/definitions/Price"
+                },
+                "deliveryCost": {
+                    "$ref": "#/definitions/Price"
+                },
+                "entries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/OrderEntry"
+                    }
+                },
+                "deliveryAddress": {
+                    "$ref": "#/definitions/Address"
+                },
+                "paymentDetails": {
+                    "$ref": "#/definitions/PaymentDetails"
+                }
+            }
+        },
+        "PaymentDetails": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Id"
+                },
+                "accountHolderName": {
+                    "type": "string",
+                    "description": "Name"
+                },
+                "cardType": {
+                    "$ref": "#/definitions/CardType"
+                },
+                "cardNumber": {
+                    "type": "string",
+                    "description": "Card Number"
+                },
+                "startMonth": {
+                    "type": "string",
+                    "description": "Start Month"
+                },
+                "startYear": {
+                    "type": "string",
+                    "description": "Start Year"
+                },
+                "expiryMonth": {
+                    "type": "string",
+                    "description": "Expiry Year"
+                },
+                "expiryYear": {
+                    "type": "string",
+                    "description": "Expiry Year"
+                },
+                "issueNumber": {
+                    "type": "string",
+                    "description": "Issue Number"
+                },
+                "subscriptionId": {
+                    "type": "string",
+                    "description": "Subscription ID"
+                },
+                "billingAddress": {
+                    "$ref": "#/definitions/Address"
+                }
+            }
+        },
+        "CardType": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "description": "code"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name"
+                }
+            }
+        },
+        "OrderEntry": {
+            "type": "object",
+            "properties": {
+                "entryNumber": {
+                    "type": "number",
+                    "description": "Entry Number"
+                },
+                "quantity": {
+                    "type": "string",
+                    "description": "Quantity"
+                },
+                "code": {
+                    "type": "string",
+                    "description": "Code"
+                },
+                "basePrice": {
+                    "$ref": "#/definitions/Price"
+                },
+                "totalPrice": {
+                    "$ref": "#/definitions/Price"
+                },
+                "product": {
+                    "$ref": "#/definitions/Product"
+                },
+                "deliveryMode": {
+                    "$ref": "#/definitions/DeliveryMode"
+                }
+            }
+        },
+        "DeliveryMode": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name"
+                },
+                "code": {
+                    "type": "string",
+                    "description": "Code"
+                },
+                "deliveryCost": {
+                    "$ref": "#/definitions/Price"
+                }
+            }
+        }
+    }
+}

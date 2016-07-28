@@ -1,0 +1,73 @@
+{
+  "name": "Cart",
+  "base": "Model",
+  
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "totalUnitCount": {
+      "type": "number",
+      "description": "Count"
+    },
+    "userId": {
+      "type": "number",
+      "description": "User Id"
+    },
+    "expirationTime": {
+      "type": "string",
+      "description": "Expiration Time"
+    },
+    "saveTime": {
+      "type": "string",
+      "description": "Save time"
+    },
+    "code": {
+      "type": "string",
+      "description": "Code",
+      "id":true
+    },
+    "totalPriceWithTax": {
+      "type": "Price"
+    },
+    "totalPrice": {
+      "type": "Price"
+    },
+    "totalTax": {
+      "type": "Price"
+    },
+    "subtotal": {
+      "type": "Price"
+    },
+    "deliveryCost": {
+      "type": "Price"
+    },
+    "entries": {
+      "type": [
+        "OrderEntry"
+      ]
+    },
+    "deliveryAddress": {
+      "type": "Address"
+    },
+    "paymentDetails": {
+      "type": "PaymentDetails"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

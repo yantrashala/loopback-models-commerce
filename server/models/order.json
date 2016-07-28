@@ -1,0 +1,72 @@
+{
+  "name": "Order",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userId": {
+      "type": "string",
+      "description": "UserId"
+    },
+    "totalUnitCount": {
+      "type": "number",
+      "description": "Count"
+    },
+    "expirationTime": {
+      "type": "string",
+      "description": "Expiration Time"
+    },
+    "saveTime": {
+      "type": "string",
+      "description": "Save time"
+    },
+    "code": {
+      "type": "string",
+      "description": "Code",
+      "id":true
+    },
+    "totalPriceWithTax": {
+      "type": "Price"
+    },
+    "totalPrice": {
+      "type": "Price"
+    },
+    "totalTax": {
+      "type": "Price"
+    },
+    "subtotal": {
+      "type": "Price"
+    },
+    "deliveryCost": {
+      "type": "Price"
+    },
+    "entries": {
+      "type": [
+        "OrderEntry"
+      ]
+    },
+    "deliveryAddress": {
+      "type": "Address"
+    },
+    "paymentDetails": {
+      "type": "PaymentDetails"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

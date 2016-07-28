@@ -1,0 +1,33 @@
+{
+  "name": "BaseCategory",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Id"
+    },
+    "name": {
+      "type": "string",
+      "description": "name"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type",
+      "enum": [
+        "product",
+        "category"
+      ]
+    },
+    "baseCategory": {
+      "type": "BaseCategory"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

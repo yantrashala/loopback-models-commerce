@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Category": {
+    "dataSource": "db",
+    "public": true
+  },
+  "BaseCategory": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Product": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Media": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Attribute": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Price": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Inventory": {
+    "dataSource": "db",
+    "public": false
+  },
+  "SearchResults": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Facet": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Region": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Country": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Address": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Cart": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Order": {
+    "dataSource": "db",
+    "public": true
+  },
+  "PaymentDetails": {
+    "dataSource": "db",
+    "public": false
+  },
+  "CardType": {
+    "dataSource": "db",
+    "public": false
+  },
+  "OrderEntry": {
+    "dataSource": "db",
+    "public": false
+  },
+  "DeliveryMode": {
+    "dataSource": "db",
+    "public": false
+  }
+}

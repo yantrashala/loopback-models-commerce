@@ -1,0 +1,30 @@
+{
+  "name": "Attribute",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "identifier": {
+      "type": "string",
+      "description": "identifier"
+    },
+    "valueIdentifier": {
+      "type": "string",
+      "description": "valueIdentifier"
+    },
+    "type": {
+      "type": "string",
+      "description": "type"
+    },
+    "value": {
+      "type": "string",
+      "description": "value"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

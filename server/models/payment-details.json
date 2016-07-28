@@ -1,0 +1,56 @@
+{
+  "name": "PaymentDetails",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Id"
+    },
+    "accountHolderName": {
+      "type": "string",
+      "description": "Name"
+    },
+    "cardType": {
+      "type": "CardType"
+    },
+    "cardNumber": {
+      "type": "string",
+      "description": "Card Number"
+    },
+    "startMonth": {
+      "type": "string",
+      "description": "Start Month"
+    },
+    "startYear": {
+      "type": "string",
+      "description": "Start Year"
+    },
+    "expiryMonth": {
+      "type": "string",
+      "description": "Expiry Year"
+    },
+    "expiryYear": {
+      "type": "string",
+      "description": "Expiry Year"
+    },
+    "issueNumber": {
+      "type": "string",
+      "description": "Issue Number"
+    },
+    "subscriptionId": {
+      "type": "string",
+      "description": "Subscription ID"
+    },
+    "billingAddress": {
+      "type": "Address"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

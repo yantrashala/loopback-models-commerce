@@ -1,0 +1,29 @@
+{
+  "name": "DeliveryMode",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "Description"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name"
+    },
+    "code": {
+      "type": "string",
+      "description": "Code"
+    },
+    "deliveryCost": {
+      "type": "Price"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

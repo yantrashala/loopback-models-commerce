@@ -1,0 +1,22 @@
+{
+  "name": "CardType",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "code"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

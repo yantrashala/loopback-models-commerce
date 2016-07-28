@@ -1,0 +1,38 @@
+{
+  "name": "OrderEntry",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "entryNumber": {
+      "type": "number",
+      "description": "Entry Number"
+    },
+    "quantity": {
+      "type": "string",
+      "description": "Quantity"
+    },
+    "code": {
+      "type": "string",
+      "description": "Code"
+    },
+    "basePrice": {
+      "type": "Price"
+    },
+    "totalPrice": {
+      "type": "Price"
+    },
+    "product": {
+      "type": "Product"
+    },
+    "deliveryMode": {
+      "type": "DeliveryMode"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

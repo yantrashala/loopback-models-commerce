@@ -1,0 +1,61 @@
+{
+  "name": "Address",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "titleCode": {
+      "type": "string",
+      "description": "TiTle",
+      "enum": [
+        "mr",
+        "ms",
+        "mrs"
+      ]
+    },
+    "firstName": {
+      "type": "string",
+      "description": "First Name"
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Last Name"
+    },
+    "userid": {
+      "type": "string",
+      "description": "User Id"
+    },
+    "shippingAddress": {
+      "type": "boolean",
+      "description": "Shipping Address"
+    },
+    "line1": {
+      "type": "string",
+      "description": "Line 1"
+    },
+    "line2": {
+      "type": "string",
+      "description": "Line 2"
+    },
+    "town": {
+      "type": "string",
+      "description": "Town"
+    },
+    "postalcode": {
+      "type": "number",
+      "description": "Postal Code"
+    },
+    "region": {
+      "type": "Region"
+    },
+    "country": {
+      "type": "Country"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
